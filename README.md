@@ -15,7 +15,7 @@ RabbitMQ 서버측 디자인 및 코드에 대해 다룹니다.
 
 ### 관리페이지에서 도착한 메세지 조회방법
 
-![](.\readme_file\img\login.png)
+![](./readme_file/img/login.png)
 
 RabbitMQ에 Username(ID), Password(PW)를 입력하여 로그인하여 관리자 페이지 접속.
 
@@ -25,7 +25,7 @@ RabbitMQ에 Username(ID), Password(PW)를 입력하여 로그인하여 관리자
 
 
 
-![](.\readme_file\img\web-main.png)
+![](./readme_file/img/web-main.png)
 
 위와 같이 메인페이지(Overview)를 볼 수 있으며 이 때 도착하여 있는 메세지는 몇개인지 확인이 가능하며, 상세한 내용은 Queues 탭에서 확인 가능함.
 
@@ -35,7 +35,7 @@ RabbitMQ에 Username(ID), Password(PW)를 입력하여 로그인하여 관리자
 
 
 
-![](.\readme_file\img\web-queue.png)
+![](./readme_file/img/web-queue.png)
 
 Queues 탭에 들어오면 각  `routing_key` 를 기준으로 메세지들이 나뉘어져있으며, 해당 이름을 클릭하면 상세 페이지로 넘어갈 수 있음.
 
@@ -45,7 +45,7 @@ Queues 탭에 들어오면 각  `routing_key` 를 기준으로 메세지들이 �
 
 
 
-![](.\readme_file\img\web-message.png)
+![](./readme_file/img/web-message.png)
 
 여러 목록 중 `Get messages` 에서 상세 메세지 내용을 확인할 수 있음.
 
