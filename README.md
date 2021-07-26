@@ -68,7 +68,7 @@ Queues 탭에 들어오면 각  `routing_key` 를 기준으로 메세지들이 �
   6 channel = connection.channel()
   7 channel.queue_declare(queue='icecoffe')
   8
-  9 channel.basic_publish(exchange='',  routing_key='icecoffe', body='fucking webos')
+  9 channel.basic_publish(exchange='',  routing_key='icecoffe', body='hello webos')
  10
  11 connection.close()
 ```
@@ -79,7 +79,7 @@ Queues 탭에 들어오면 각  `routing_key` 를 기준으로 메세지들이 �
 
 7번째 라인 : icecoffe 라는 queue에 메세지를 쌓을 것이며 `.queue_declare(queue='icecoffe')`
 
-9번째 라인 : 해당 큐에 메세지를 발행합니다. `.basic_publish(exchange='',  routing_key='icecoffe', body='fucking webos')` 이 경우 icecoffe 라는 queue에 fucking webos 라는 메세지가 보내집니다.
+9번째 라인 : 해당 큐에 메세지를 발행합니다. `.basic_publish(exchange='',  routing_key='icecoffe', body='hello webos')` 이 경우 icecoffe 라는 queue에 hello webos 라는 메세지가 보내집니다.
 
 
 
