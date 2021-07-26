@@ -7,8 +7,8 @@ RabbitMQ 서버측 디자인 및 코드에 대해 다룹니다.
 ## 외부 접속 방법
 
 - 관리페이지 링크 : http://211.179.42.130:15672/
-- RabbitMQ ID : admin
-- RabbitMQ PW : 1234
+- RabbitMQ ID : rabbit
+- RabbitMQ PW : MQ321
 - AMQP 통신 Port : 5672 (5671)
 
 
