@@ -2,6 +2,8 @@
 
 RabbitMQ 서버측 디자인 및 코드에 대해 다룹니다.
 
+![RabbitMQ동작구조](./readme_file/img/RabbitMQ동작구조.png)
+
 
 
 ## 외부 접속 방법
@@ -87,7 +89,7 @@ Queues 탭에 들어오면 각  `routing_key` 를 기준으로 메세지들이 �
 ### RabbitMQ 개념
  - RabbitMQ 개념 블로그 : https://coding-start.tistory.com/371
  - RabbitMQ 개념 동영상 : https://www.youtube.com/watch?v=deG25y_r6OY
-  
+
 ### 설치 및 실사용 관련
  - RabbitMQ 공식사이트 : https://www.rabbitmq.com/
  - 서버 설치설명 : http://pont.ist/rabbit-mq/
