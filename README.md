@@ -74,15 +74,19 @@ Queues 탭에 들어오면 각  `routing_key` 를 기준으로 메세지들이 �
  10
  11 connection.close()
 ```
-
-접속을 위하여 계정의 아이디와 패스워드를 명시해줍니다. `.PlainCredentials('admin','1234')` 이는 ID가 admin, PW가 1234임을 의미합니다.
-
-이어서 네트워크 정보를 입력해줍니다. `.ConnectionParameters(host='211.179.42.130',port=5672,credentials=cred` 이는 IP 211.179.42.130, Port는 기본포트인 5672, 로그인 계정정보는 `cred` 임을 의미합니다.
-
-7번째 라인 : icecoffe 라는 queue에 메세지를 쌓을 것이며 `.queue_declare(queue='icecoffe')`
-
-9번째 라인 : 해당 큐에 메세지를 발행합니다. `.basic_publish(exchange='',  routing_key='icecoffe', body='hello webos')` 이 경우 icecoffe 라는 queue에 hello webos 라는 메세지가 보내집니다.
-
+  
+접속을 위하여 계정의 아이디와 패스워드를 명시해줍니다. `.PlainCredentials('admin','1234')`
+> 이 예시에서는 ID가 admin, PW가 1234임을 의미합니다.  
+  
+이어서 네트워크 정보를 입력해줍니다. `.ConnectionParameters(host='211.179.42.130',port=5672,credentials=cred`
+> 이는 IP 211.179.42.130, Port는 기본포트인 5672, 로그인 계정정보는 `cred` 임을 의미합니다.
+  
+7번째 라인 : 메세지를 발행할 queue를 명시합니다. `.queue_declare(queue='icecoffe')`
+> 여기서는 icecoffe queue에 메세지가 발행되며, 만약 해당 queue가 없는 경우 이 구문을 통해 새로 생성합니다.
+  
+9번째 라인 : 해당 큐에 메세지를 발행합니다. `.basic_publish(exchange='',  routing_key='icecoffe', body='hello webos')`
+> 이 경우 icecoffe 라는 queue에 hello webos 라는 메세지가 보내집니다. RabbitMQ는 메세지 전달시 반드시 exchange를 거쳐야하나 공란으로 둘경우 queue를 직접 선택할 수 있습니다.
+  
 
 
 ## 참고링크
