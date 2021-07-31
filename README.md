@@ -91,13 +91,12 @@ Queues 탭에 들어오면 각  `routing_key` 를 기준으로 메세지들이 �
 
 ## 참고링크
 ### RabbitMQ 개념
+ - RabbitMQ 개념 블로그1  : https://nesoy.github.io/articles/2019-02/RabbitMQ  
+ - RabbitMQ 개념 블로그2 : https://coding-start.tistory.com/371  
+ - RabbitMQ 개념 동영상 : https://www.youtube.com/watch?v=deG25y_r6OY  
+ - exchange 종류 : https://jonnung.dev/rabbitmq/2019/02/06/about-amqp-implementtation-of-rabbitmq/  
 
-- RabbitMQ 개념 블로그1  : https://nesoy.github.io/articles/2019-02/RabbitMQ
-
- - RabbitMQ 개념 블로그2 : https://coding-start.tistory.com/371
- - RabbitMQ 개념 동영상 : https://www.youtube.com/watch?v=deG25y_r6OY
-
-### 설치 및 실사용 관련
+### 설치 및 간단사용 관련
  - RabbitMQ 공식사이트 : https://www.rabbitmq.com/
  - 서버 설치설명 : http://pont.ist/rabbit-mq/
  - 서버 설치공식 : https://www.rabbitmq.com/install-debian.html
@@ -107,3 +106,4 @@ Queues 탭에 들어오면 각  `routing_key` 를 기준으로 메세지들이 �
  - 파이썬 pika.connection 인자값 설명 : https://pika.readthedocs.io/en/stable/modules/parameters.html
  - Ubuntu 에서 RabbitMQ 설치하기 : https://jonnung.dev/rabbitmq/2019/01/30/rabbitmq-installation-on-ubuntu/
  - RabbitMQ 설치 및 실행 간단예 : https://yoonwould.tistory.com/157
+ -
