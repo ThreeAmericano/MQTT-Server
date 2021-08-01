@@ -1,6 +1,6 @@
-# MQTT-Server
+# MQTT Broker Server
 
-RabbitMQ 서버측 디자인 및 코드에 대해 다룹니다.
+RabbitMQ Broker 서버측 디자인 및 코드, 프로토콜 규약 등에 대해 다룹니다.
 
 ![RabbitMQ동작구조(workflow)](./readme_file/img/RabbitMQ동작구조.png)
 
