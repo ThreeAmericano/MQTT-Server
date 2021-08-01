@@ -243,7 +243,6 @@ connection.close()
 
 
 ### Android -> Server : 회원가입
-### webOS -> Server : 회원가입
 
 해당은 안드로이드 어플을 통해 정상적으로 회원가입을 진행완료하였을 때, 서버측으로 보내는 메시지입니다.
 
