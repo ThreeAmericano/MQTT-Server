@@ -218,7 +218,7 @@ connection.close()
 
 메세지 발행시 사용되는 routing-key는 반드시 사전에 정의된 이름을 따라야하며, 그 항목은 아래와 같습니다.
 
-> webos.DEVICE_NAME.MESSAGE_TYPE
+> webos.DEVICE_NAME.MESSAGE_TYPE  
 > 예) webos.android.info //android로 보내는 info 메세지
 
 ### DEVICE_NAME 종류
