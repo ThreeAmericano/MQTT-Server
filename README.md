@@ -281,6 +281,7 @@ JSON 예시
  - exchange Topic 공식링크 : https://www.rabbitmq.com/tutorials/tutorial-five-go.html  
  - exchange Topic 예시 : https://www.cloudamqp.com/blog/part4-rabbitmq-for-beginners-exchanges-routing-keys-bindings.html  
  - 구조, 품질, 장애대비 관련참조 : https://jeongchul.tistory.com/296  
+ - 정상확인 시 반환하는 ACK란? : https://blog.leocat.kr/notes/2018/06/20/rabbitmq-dead-lettering-with-reject-or-nack  
 
 ### 설치 및 간단사용 관련
  - RabbitMQ 공식사이트 : https://www.rabbitmq.com/
