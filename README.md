@@ -193,7 +193,6 @@ connection.close()
 
 ## exchange
 
-exchange Topic 공식링크 : https://www.rabbitmq.com/tutorials/tutorial-five-go.html  
 모든 메세지는 반드시 exchange를 통해 발행되어야 하며, exchange의 type은 `topic` 입니다. 사용할 exchange의 정보는 아래와 같이 정의합니다.
 
 ### 기본 정보
@@ -279,6 +278,8 @@ JSON 예시
  - RabbitMQ 개념 블로그2 : https://coding-start.tistory.com/371  
  - RabbitMQ 개념 동영상 : https://www.youtube.com/watch?v=deG25y_r6OY  
  - exchange 종류 : https://jonnung.dev/rabbitmq/2019/02/06/about-amqp-implementtation-of-rabbitmq/    
+ - exchange Topic 공식링크 : https://www.rabbitmq.com/tutorials/tutorial-five-go.html  
+ - exchange Topic 예시 : https://www.cloudamqp.com/blog/part4-rabbitmq-for-beginners-exchanges-routing-keys-bindings.html  
  - 구조, 품질, 장애대비 관련참조 : https://jeongchul.tistory.com/296  
 
 ### 설치 및 간단사용 관련
