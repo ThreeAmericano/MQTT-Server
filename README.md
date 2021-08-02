@@ -192,7 +192,8 @@ connection.close()
 
 
 ## exchange
-exchange Topic 공식링크 : https://www.rabbitmq.com/tutorials/tutorial-five-go.html
+
+exchange Topic 공식링크 : https://www.rabbitmq.com/tutorials/tutorial-five-go.html  
 모든 메세지는 반드시 exchange를 통해 발행되어야 하며, exchange의 type은 `topic` 입니다. 사용할 exchange의 정보는 아래와 같이 정의합니다.
 
 ### 기본 정보
