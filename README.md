@@ -288,8 +288,10 @@ JSON 예시
  - 서버 설치공식 : https://www.rabbitmq.com/install-debian.html
  - 클라이언트 파이썬예제 한글번역 : https://blog.storyg.co/rabbitmqs/tutorials/python/01-hellowolrd
  - Python으로 메시지 생성, 소비하기 : https://smoh.tistory.com/289
- - RabbitMQ 시행착오 모음 : https://shortstories.gitbooks.io/studybook/content/message_queue_c815_b9ac/rabbitmq-c0bd-c9c8.html
  - 파이썬 pika.connection 인자값 설명 : https://pika.readthedocs.io/en/stable/modules/parameters.html
  - Ubuntu 에서 RabbitMQ 설치하기 : https://jonnung.dev/rabbitmq/2019/01/30/rabbitmq-installation-on-ubuntu/
  - RabbitMQ 설치 및 실행 간단예 : https://yoonwould.tistory.com/157
- -
+ 
+### 적용사례
+ - 배민 기술블로그 사례 : https://techblog.woowahan.com/2540/  
+ - RabbitMQ 시행착오 모음 : https://shortstories.gitbooks.io/studybook/content/message_queue_c815_b9ac/rabbitmq-c0bd-c9c8.html  
