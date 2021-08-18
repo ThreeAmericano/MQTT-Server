@@ -20,6 +20,8 @@ RabbitMQ Broker 서버측 디자인 및 코드, 프로토콜 규약 등에 대�
 
 ⬜ QoS 수준지정
 
+⬜ Queue 데이터 저장소를 메모리(RAM) 기반이 아닌 기억장치(HDD) 기반으로 변경?
+
 ### 서버 MQTT-Client 관련 => 관련내용 Backend-Server 저장소 참조.
 
 ✅ 안드로이드에서 회원가입시 전달받은 정보를 파이어베이스에 추가하는 코드 (테스트 수준으로 완료)
@@ -181,9 +183,9 @@ connection.close()
 
 
 
-# Car2Home 프로토콜 정의 (작성중)
+# Car2Home 프로토콜 정의 
 
-메세지 발행시에 필요한 항목들을 아래와 같이 정의합니다.
+메세지 발행시에 필요한 항목들을 아래와 같이 정의합니다. 각 명령별 상세한 내용은 팀 노션 페이지(https://www.notion.so/MQTT-e02fe7f8d05b48a58553a145f47ccc03)를 참조하시기 바랍니다.
 
 - exchange
 - routing-key
@@ -195,6 +197,8 @@ connection.close()
 
 모든 메세지는 반드시 exchange를 통해 발행되어야 하며, exchange의 type은 `topic` 입니다. 사용할 exchange의 정보는 아래와 같이 정의합니다.
 
+
+
 ### 기본 정보
 
 - Name : webos.topic
@@ -204,9 +208,11 @@ connection.close()
 - Internal : No
 - Arguments : (none)
 
+
+
 ### Bindings 규칙
 
-- To `amqtest` , Routing Key `amqtest` , Arguments `none`
+![](./readme_file/img/exchange_topic_set.png)
 
 ### 특이사항
 
@@ -233,7 +239,6 @@ connection.close()
 - info : 메세지를 통해 보통의 정보를 전달하는 경우
 - error : 동작을 정상적으로 처리하지 못하고 치명적인 에러가 발생한 경우
 - warning : 동작을 정상적으로 처리하였으나, 이 과정에서 에러가 발생한 경우  
-  
 > 예) webos.android.info //android로 보내는 info 메세지  
 
 
@@ -243,7 +248,7 @@ connection.close()
 
 
 
-### Android -> Server : 회원가입
+### ex) Android -> Server : 회원가입
 
 해당은 안드로이드 어플을 통해 정상적으로 회원가입을 진행완료하였을 때, 서버측으로 보내는 메시지입니다.
 
@@ -293,7 +298,7 @@ JSON 예시
  - 파이썬 pika.connection 인자값 설명 : https://pika.readthedocs.io/en/stable/modules/parameters.html
  - Ubuntu 에서 RabbitMQ 설치하기 : https://jonnung.dev/rabbitmq/2019/01/30/rabbitmq-installation-on-ubuntu/
  - RabbitMQ 설치 및 실행 간단예 : https://yoonwould.tistory.com/157
- 
+
 ### 적용사례
  - 배민 기술블로그 사례 : https://techblog.woowahan.com/2540/  
  - RabbitMQ 시행착오 모음 : https://shortstories.gitbooks.io/studybook/content/message_queue_c815_b9ac/rabbitmq-c0bd-c9c8.html  
