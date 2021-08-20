@@ -2,7 +2,7 @@
 RabbitMQ 서버에 직접 접속하지않고, 인터넷 관리 페이지를 통하여 접근하는 방식. (POST)  
 RabbitMQ REST Doc : https://pulse.mozilla.org/api/index.html  
 
-### 응답예시
+### 기대응답 예시
 test321 큐에 있는 메세지 2개를 확인한 모습. (내용1 : direct messsssssssage, 내용2 : messageeeeeee)  
 ```sh
  $ python3 MQTT_rest_test.py
