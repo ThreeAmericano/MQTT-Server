@@ -272,6 +272,16 @@ JSON 예시
 
 
 
+# 오류이슈
+
+### 파이썬 Thread를 통한 MQTT 사용중 에러 
+
+AssertionError(('_AsyncTransportBase._initate_abort() expected non-_STATE_COMPLETED', 4))
+
+https://github.com/pika/pika/blob/0.12.0/examples/basic_consumer_threaded.py
+
+https://github.com/pika/pika/issues/1144
+
 
 
 
