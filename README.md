@@ -22,6 +22,8 @@ RabbitMQ Broker 서버측 디자인 및 코드, 프로토콜 규약 등에 대�
 
 ⬜ Queue 데이터 저장소를 메모리(RAM) 기반이 아닌 기억장치(HDD) 기반으로 변경?
 
+✅ 아두이노 연동을 위한 MQTT Plugin 설치
+
 ### 서버 MQTT-Client 관련 => 관련내용 Backend-Server 저장소 참조.
 
 ✅ 안드로이드에서 회원가입시 전달받은 정보를 파이어베이스에 추가하는 코드 (테스트 수준으로 완료)
@@ -312,3 +314,4 @@ https://github.com/pika/pika/issues/1144
 ### 적용사례
  - 배민 기술블로그 사례 : https://techblog.woowahan.com/2540/  
  - RabbitMQ 시행착오 모음 : https://shortstories.gitbooks.io/studybook/content/message_queue_c815_b9ac/rabbitmq-c0bd-c9c8.html  
+ - MQTT Plugin 적용 : http://blog.moramcnt.com/?p=1156
