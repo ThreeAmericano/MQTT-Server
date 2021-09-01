@@ -24,6 +24,10 @@ RabbitMQ Broker 서버측 디자인 및 코드, 프로토콜 규약 등에 대�
 
 ✅ 아두이노 연동을 위한 MQTT Plugin 설치
 
+⬜ MQTT-Plugin 관련 설정 (사용할 exchange 지정)
+
+
+
 ### 서버 MQTT-Client 관련 => 관련내용 Backend-Server 저장소 참조.
 
 ✅ 안드로이드에서 회원가입시 전달받은 정보를 파이어베이스에 추가하는 코드 (테스트 수준으로 완료)
@@ -78,6 +82,62 @@ Queues 탭에 들어오면 각  `routing_key` 를 기준으로 메세지들이 �
 ![](./readme_file/img/web-message.png)
 
 여러 목록 중 `Get messages` 에서 상세 메세지 내용을 확인할 수 있음.
+
+
+
+
+
+## 서버 설정
+
+설치 플러그인
+
+```shell
+rabbitmq_management
+rabbitmq_mqtt
+rabbitmq_web_stomp
+```
+
+
+
+설정파일
+
+```shell
+  1 [{rabbit,        [{tcp_listeners,    [5672]}]},
+  2  {rabbitmq_mqtt, [{default_user,     <<"guest">>},
+  3                   {default_pass,     <<"guest">>},
+  4                   {allow_anonymous,  true},
+  5                   {vhost,            <<"/">>},
+  6                   {exchange,         <<"webos.topic">>},
+  7                   {subscription_ttl, 1800000},
+  8                   {prefetch,         10},
+  9                   {ssl_listeners,    []},
+ 10                   %% Default MQTT with TLS port is 8883
+ 11                   %% {ssl_listeners,    [8883]}
+ 12                   {tcp_listeners,    [1883]},
+ 13                   {tcp_listen_options, [binary,
+ 14                                         {packet,    raw},
+ 15                                         {reuseaddr, true},
+ 16                                         {backlog,   128},
+ 17                                         {nodelay,   true}]}]}
+ 18 ].
+```
+
+
+
+서비스 동작 관리
+
+```
+sudo rabbitmqctl stop
+sudo rabbitmqctl start_app
+```
+
+
+
+서버 정보 확인
+
+```
+sudo rabbitmqctl status
+```
 
 
 
@@ -311,7 +371,12 @@ https://github.com/pika/pika/issues/1144
  - Ubuntu 에서 RabbitMQ 설치하기 : https://jonnung.dev/rabbitmq/2019/01/30/rabbitmq-installation-on-ubuntu/
  - RabbitMQ 설치 및 실행 간단예 : https://yoonwould.tistory.com/157
 
+### MQTT-Plugin
+
+- 설치 및 적용 :  https://rabbitmq.docs.pivotal.io/36/rabbit-web-docs/mqtt.html
+
 ### 적용사례
  - 배민 기술블로그 사례 : https://techblog.woowahan.com/2540/  
  - RabbitMQ 시행착오 모음 : https://shortstories.gitbooks.io/studybook/content/message_queue_c815_b9ac/rabbitmq-c0bd-c9c8.html  
  - MQTT Plugin 적용 : http://blog.moramcnt.com/?p=1156
+
