@@ -4,7 +4,7 @@ RabbitMQ Broker 서버측 디자인 및 코드, 프로토콜 규약 등에 대�
 
 ![RabbitMQ동작구조(workflow)](./readme_file/img/RabbitMQ동작구조.png)
 
-
+<br/>
 
 ##  ✅ TODO
 
@@ -18,25 +18,17 @@ RabbitMQ Broker 서버측 디자인 및 코드, 프로토콜 규약 등에 대�
 
 ✅ 각 Device 별 queue 및 topic 기준 exchange를 추가 진행, 이후 규약에 따른 연결
 
-⬜ QoS 수준지정
+✅ QoS 수준지정 (level 0)
 
-⬜ Queue 데이터 저장소를 메모리(RAM) 기반이 아닌 기억장치(HDD) 기반으로 변경?
+🚫 Queue 데이터 저장소를 메모리(RAM) 기반이 아닌 기억장치(HDD) 기반으로 변경?
 
 ✅ 아두이노 연동을 위한 MQTT Plugin 설치
 
-⬜ MQTT-Plugin 관련 설정 (사용할 exchange 지정)
+✅ MQTT-Plugin 관련 설정 (사용할 exchange 지정)
 
+<br/>
 
-
-### 서버 MQTT-Client 관련 => 관련내용 Backend-Server 저장소 참조.
-
-✅ 안드로이드에서 회원가입시 전달받은 정보를 파이어베이스에 추가하는 코드 (테스트 수준으로 완료)
-
-✅ webOS에서 회원가입시 이를 파이어베이스에 추가하는 코드 (테스트 수준으로 완료)
-
-
-
-
+<br/>
 
 # 외부 접속 방법
 
@@ -45,7 +37,7 @@ RabbitMQ Broker 서버측 디자인 및 코드, 프로토콜 규약 등에 대�
 - RabbitMQ PW : MQ321
 - AMQP 통신 Port : 5672 (5671)
 
-
+<br/>
 
 ### 관리페이지에서 도착한 메세지 조회방법
 
@@ -53,7 +45,7 @@ RabbitMQ Broker 서버측 디자인 및 코드, 프로토콜 규약 등에 대�
 
 RabbitMQ에 Username(ID), Password(PW)를 입력하여 로그인하여 관리자 페이지 접속.
 
-
+<br/>
 
 
 
@@ -63,7 +55,7 @@ RabbitMQ에 Username(ID), Password(PW)를 입력하여 로그인하여 관리자
 
 위와 같이 메인페이지(Overview)를 볼 수 있으며 이 때 도착하여 있는 메세지는 몇개인지 확인이 가능하며, 상세한 내용은 Queues 탭에서 확인 가능함.
 
-
+<br/>
 
 
 
@@ -73,7 +65,7 @@ RabbitMQ에 Username(ID), Password(PW)를 입력하여 로그인하여 관리자
 
 Queues 탭에 들어오면 각  `routing_key` 를 기준으로 메세지들이 나뉘어져있으며, 해당 이름을 클릭하면 상세 페이지로 넘어갈 수 있음.
 
-
+<br/>
 
 
 
@@ -83,7 +75,7 @@ Queues 탭에 들어오면 각  `routing_key` 를 기준으로 메세지들이 �
 
 여러 목록 중 `Get messages` 에서 상세 메세지 내용을 확인할 수 있음.
 
-
+<br/>
 
 
 
@@ -97,7 +89,7 @@ rabbitmq_mqtt
 rabbitmq_web_stomp
 ```
 
-
+<br/>
 
 설정파일
 
@@ -122,7 +114,7 @@ rabbitmq_web_stomp
  18 ].
 ```
 
-
+<br/>
 
 서비스 동작 관리
 
@@ -131,7 +123,7 @@ sudo rabbitmqctl stop
 sudo rabbitmqctl start_app
 ```
 
-
+<br/>
 
 서버 정보 확인
 
@@ -139,7 +131,7 @@ sudo rabbitmqctl start_app
 sudo rabbitmqctl status
 ```
 
-
+<br/>
 
 
 
@@ -149,7 +141,7 @@ sudo rabbitmqctl status
 
 파이썬으로 MQTT를 사용하기 위해서는 `python -m pip install pika --upgrade` 명령을 통해 pika 라이브러리를 다운받아 미리 준비해둬야합니다.
 
-
+<br/>
 
 ## Queue에 Direct로 메세지 보내기
 
@@ -181,7 +173,7 @@ sudo rabbitmqctl status
 9번째 라인 : 해당 큐에 메세지를 발행합니다. `.basic_publish(exchange='',  routing_key='icecoffe', body='hello webos')`
 > 이 경우 icecoffe 라는 queue에 hello webos 라는 메세지가 보내집니다. RabbitMQ는 메세지 전달시 반드시 exchange를 거쳐야하나 공란으로 둘경우 queue를 직접 선택할 수 있습니다.
 
-
+<br/>
 
 ## Queue에 있는 메세지 읽기
 
@@ -209,7 +201,7 @@ channel.start_consuming()
 
 > 해당 코드에서는 icecoffe queue에 메세지가 도착할경우 이를 읽어 소비합니다.
 
-
+<br/>
 
 ## exchange를 통해 메시지 보내기
 
@@ -237,11 +229,13 @@ connection.close()
 
 테스트시에 해당 exchange는 Direct로 설정되어 있었으며 옵션은 아래 그림과 같습니다.
 
+<br/>
+
 ![](./readme_file/img/rabbitmq_exchange.jpg)
 
 아래쪽 Bindings를 통해 `amqtest` , `icecoffe` , `test321` 에 메세지를 전달해주는 역할을 한다는걸 알 수 있습니다. `amqtest` 의 경우 Routing_key로 amqtest를 명시하였으므로, 해당 KEY의 메세지들은 `amqtest` 큐로 가게됩니다. Routing_key를 명시하지않는 경우 `icecoffe`와 `test321` 로 보내지게 됩니다.  
 
-
+<br/>
 
 
 
@@ -253,13 +247,13 @@ connection.close()
 - routing-key
 - payload
 
-
+<br/>
 
 ## exchange
 
 모든 메세지는 반드시 exchange를 통해 발행되어야 하며, exchange의 type은 `topic` 입니다. 사용할 exchange의 정보는 아래와 같이 정의합니다.
 
-
+<br/>
 
 ### 기본 정보
 
@@ -270,7 +264,7 @@ connection.close()
 - Internal : No
 - Arguments : (none)
 
-
+<br/>
 
 ### Bindings 규칙
 
@@ -280,7 +274,7 @@ connection.close()
 
 - 이와 별개로 webos.fanout 이라는 exchange를 개설하여 전체 Queue에 긴급 메세지를 전달하는 역할을 수행하게함.
 
-
+<br/>
 
 ## routing-key
 
@@ -303,12 +297,13 @@ connection.close()
 - warning : 동작을 정상적으로 처리하였으나, 이 과정에서 에러가 발생한 경우  
 > 예) webos.android.info //android로 보내는 info 메세지  
 
+<br/>
 
 ## payload
 
-실제 사용되는 데이터는 json 형태로 전송되어야 하며, 사용 항목들은 반드시 사전에 정의되어야 합니다. 아래는 각 기기별 메세지 항목 예시입니다. 또한 모든 메세지의 처음에는 `발행자(producer)`와 `어떠한 정보(information)`인지를 명시해야 합니다.
+실제 통신에 사용되는 데이터는 `json` 형태로 전송되어야 하며, 사용 항목들은 반드시 사전에 정의되어야 합니다. 아래는 각 기기별 메세지 항목 예시입니다. 또한 모든 메세지의 처음에는 `발행자(producer)`와 `어떠한 정보(information)`인지를 명시해야 합니다.
 
-
+<br/>
 
 ### ex) Android -> Server : 회원가입
 
@@ -330,7 +325,7 @@ JSON 예시
 }
 ```
 
-
+<br/>
 
 
 
@@ -344,7 +339,7 @@ https://github.com/pika/pika/blob/0.12.0/examples/basic_consumer_threaded.py
 
 https://github.com/pika/pika/issues/1144
 
-
+<br/>
 
 
 

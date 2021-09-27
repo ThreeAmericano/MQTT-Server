@@ -2,6 +2,8 @@
 RabbitMQ 서버에 직접 접속하지않고, 인터넷 관리 페이지를 통하여 접근하는 방식. (POST)  
 RabbitMQ REST Doc : https://pulse.mozilla.org/api/index.html  
 
+<br/>
+
 ### 기대응답 예시
 test321 큐에 있는 메세지 2개를 확인한 모습. (내용1 : direct messsssssssage, 내용2 : messageeeeeee)  
 ```sh
@@ -9,13 +11,20 @@ test321 큐에 있는 메세지 2개를 확인한 모습. (내용1 : direct mess
 Response :[{"payload_bytes":21,"redelivered":true,"exchange":"","routing_key":"test321","message_count":1,"properties":[],"payload":"direct messsssssssage","payload_encoding":"string"},{"payload_bytes":13,"redelivered":true,"exchange":"","routing_key":"test321","message_count":0,"properties":[],"payload":"messageeeeeee","payload_encoding":"string"}]
 ```
 
+<br/>
+
 # 예제
+
 ## Linux CURL 예제
+
 ```sh
 curl -i -X POST http://rabbit:MQ321@211.179.42.130:15672/api/queues/%2f/test321/get  -H "Content-Type: application/json" -d '{"count":5,"requeue":true,"encoding":"auto","truncate":50000,"ackmode":"ack_requeue_true"}'
 ```
-  
+
+<br/>
+
 ## Python3 Request 예제
+
 ```python
   1 # importing the requests library
   2 import requests
@@ -35,8 +44,11 @@ curl -i -X POST http://rabbit:MQ321@211.179.42.130:15672/api/queues/%2f/test321/
  16 print("Response :%s"%pastebin_url)
  17
 ```
-  
+
+<br/>
+
 ## HTML/JS 예제
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -87,4 +99,4 @@ function sendoutput() {
 </html>
 ```
 
-
+<br/>
