@@ -32,7 +32,7 @@ RabbitMQ Broker 서버측 디자인 및 코드, 프로토콜 규약 등에 대�
 
 # 외부 접속 방법
 
-- 관리페이지 링크 : http://211.179.42.130:15672/
+- 관리페이지 링크 : http://<<SERVER IP>>:<<WEB MANAGEMENT PORT>>/
 - RabbitMQ ID : rabbit
 - RabbitMQ PW : MQ321
 - AMQP 통신 Port : 5672 (5671)
@@ -151,7 +151,7 @@ sudo rabbitmqctl status
   1 import pika
   2
   3 cred = pika.PlainCredentials('rabbit','MQ321')
-  4 connection = pika.BlockingConnection(pika.ConnectionParameters(host='211.179.42.130',port=5672,credentials=cred)    )
+  4 connection = pika.BlockingConnection(pika.ConnectionParameters(host='<<SERVER IP>>',port=5672,credentials=cred)    )
   5
   6 channel = connection.channel()
   7 channel.queue_declare(queue='icecoffe')
@@ -164,8 +164,8 @@ sudo rabbitmqctl status
 접속을 위하여 계정의 아이디와 패스워드를 명시해줍니다. `.PlainCredentials('admin','1234')`
 > 이 예시에서는 ID가 admin, PW가 1234임을 의미합니다.  
 
-이어서 네트워크 정보를 입력해줍니다. `.ConnectionParameters(host='211.179.42.130',port=5672,credentials=cred`
-> 이는 IP 211.179.42.130, Port는 기본포트인 5672, 로그인 계정정보는 `cred` 임을 의미합니다.
+이어서 네트워크 정보를 입력해줍니다. `.ConnectionParameters(host='<<SERVER IP>>',port=5672,credentials=cred`
+> 이는 IP <<SERVER IP>>, Port는 기본포트인 5672, 로그인 계정정보는 `cred` 임을 의미합니다.
 
 7번째 라인 : 메세지를 발행할 queue를 명시합니다. `.queue_declare(queue='icecoffe')`
 > 여기서는 icecoffe queue에 메세지가 발행되며, 만약 해당 queue가 없는 경우 이 구문을 통해 새로 생성합니다.
@@ -183,7 +183,7 @@ sudo rabbitmqctl status
 import pika
 
 cred = pika.PlainCredentials('rabbit','MQ321') #MQTT계정 ID,PW를 차례로 입력
-connection = pika.BlockingConnection(pika.ConnectionParameters(host='211.179.42.130',port=5672,credentials=cred)) #MQTT서버의 IP, Port를 입력
+connection = pika.BlockingConnection(pika.ConnectionParameters(host='<<SERVER IP>>',port=5672,credentials=cred)) #MQTT서버의 IP, Port를 입력
 channel = connection.channel()
 
 channel.queue_declare(queue='icecoffe') #사용할 queue를 정의 (해당 queue가 없다면 새로 생성)
@@ -213,7 +213,7 @@ import pika
 import sys
 
 cred = pika.PlainCredentials('rabbit','MQ321') #MQTT계정 ID,PW를 차례로 입력
-connection = pika.BlockingConnection(pika.ConnectionParameters(host='211.179.42.130',port=5672,credentials=cred)) #MQTT서버의 IP, Port를 입력
+connection = pika.BlockingConnection(pika.ConnectionParameters(host='<<SERVER IP>>',port=5672,credentials=cred)) #MQTT서버의 IP, Port를 입력
 channel = connection.channel()
 
 # 사용할 exchange 이름과 type(direct, topic, fanout ..)을 입력합니다. 해당 exchange가 없을시 생성합니다.

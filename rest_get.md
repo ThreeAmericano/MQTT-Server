@@ -5,6 +5,7 @@ RabbitMQ REST Doc : https://pulse.mozilla.org/api/index.html
 <br/>
 
 ### 기대응답 예시
+
 test321 큐에 있는 메세지 2개를 확인한 모습. (내용1 : direct messsssssssage, 내용2 : messageeeeeee)  
 ```sh
  $ python3 MQTT_rest_test.py
@@ -18,7 +19,7 @@ Response :[{"payload_bytes":21,"redelivered":true,"exchange":"","routing_key":"t
 ## Linux CURL 예제
 
 ```sh
-curl -i -X POST http://rabbit:MQ321@211.179.42.130:15672/api/queues/%2f/test321/get  -H "Content-Type: application/json" -d '{"count":5,"requeue":true,"encoding":"auto","truncate":50000,"ackmode":"ack_requeue_true"}'
+curl -i -X POST http://rabbit:MQ321@<<SERVER IP>>:<<SERVER PORT>>/api/queues/%2f/test321/get  -H "Content-Type: application/json" -d '{"count":5,"requeue":true,"encoding":"auto","truncate":50000,"ackmode":"ack_requeue_true"}'
 ```
 
 <br/>
@@ -30,7 +31,7 @@ curl -i -X POST http://rabbit:MQ321@211.179.42.130:15672/api/queues/%2f/test321/
   2 import requests
   3
   4 # defining the api-endpoint
-  5 API_ENDPOINT = "http://211.179.42.130:15672/api/queues/%2f/test321/get"
+  5 API_ENDPOINT = "http://<<SERVER IP>>:<<SERVER PORT>>/api/queues/%2f/test321/get"
   6
   7 headers = {'content-type': 'application/json'}
   8 # data to be sent to api
@@ -55,7 +56,7 @@ curl -i -X POST http://rabbit:MQ321@211.179.42.130:15672/api/queues/%2f/test321/
 <body>
 <h2>RabbitMQ REST API - Get Queue Message</h2>
 
-URL/API Call: <input type="text" id="theurl" value="http://211.179.42.130:15672/api/queues/%2f/"  size = "50" /> <br><br>
+URL/API Call: <input type="text" id="theurl" value="http://<<SERVER IP>>:<<SERVER PORT>>/api/queues/%2f/"  size = "50" /> <br><br>
 Queue Name:   <input type="text" id="qname" value="test321"/> <br><br>
 Requeue: <input type="text" id="rq" value="true" /> (false = remove old values)<br><br>
 Message Count: <input type="text" id="mcount" value="5"/> <br><br>
